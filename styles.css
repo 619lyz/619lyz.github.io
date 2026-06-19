@@ -236,7 +236,6 @@ h3 {
     var(--panel);
   box-shadow: var(--shadow);
   color: inherit;
-  cursor: pointer;
   text-align: left;
 }
 
@@ -255,13 +254,14 @@ h3 {
   overflow: hidden;
 }
 
-#robot-canvas,
-#robot-detail-canvas {
+.robot-stage iframe,
+.dialog-visual iframe {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
+  border: 0;
 }
 
 .robot-copy {
@@ -284,8 +284,13 @@ h3 {
 
 .robot-link {
   margin-top: 8px;
+  border: 0;
+  background: transparent;
   color: var(--blue);
+  cursor: pointer;
+  font: inherit;
   font-weight: 850;
+  padding: 0;
 }
 
 .project-grid {

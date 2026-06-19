@@ -10,15 +10,6 @@
     <title>LIU YIZHOU | 619lyz</title>
     <link rel="preconnect" href="https://avatars.githubusercontent.com" />
     <link rel="stylesheet" href="styles.css" />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
-          "three/examples/jsm/loaders/STLLoader.js": "https://unpkg.com/three@0.165.0/examples/jsm/loaders/STLLoader.js",
-          "three/examples/jsm/loaders/ColladaLoader.js": "https://unpkg.com/three@0.165.0/examples/jsm/loaders/ColladaLoader.js"
-        }
-      }
-    </script>
   </head>
   <body>
     <header class="site-header">
@@ -65,9 +56,14 @@
           <p class="eyebrow">Selected Work</p>
           <h2 id="work-title">项目</h2>
         </div>
-        <button class="robot-feature" type="button" data-open-robot>
-          <span class="robot-stage" aria-hidden="true">
-            <canvas id="robot-canvas"></canvas>
+        <article class="robot-feature">
+          <span class="robot-stage">
+            <iframe
+              title="Unitree G1 3D model"
+              src="https://sketchfab.com/models/a817280996014cf29a7ec8631a15c012/embed?autostart=1&autospin=0.35&ui_controls=0&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen
+            ></iframe>
           </span>
           <span class="robot-copy">
             <span class="project-tag">Humanoid Robot</span>
@@ -75,9 +71,9 @@
             <span>
               面向宇树 G1 的机器人项目入口：视觉感知、数据采集、控制实验和工具链会集中放在这里。
             </span>
-            <span class="robot-link">Open Project</span>
+            <button class="robot-link" type="button" data-open-robot>Open Project</button>
           </span>
-        </button>
+        </article>
         <div class="project-grid">
           <article class="project-card">
             <span class="project-tag">Robotics</span>
@@ -109,8 +105,13 @@
       <dialog class="project-dialog" id="robot-dialog" aria-labelledby="robot-dialog-title">
         <div class="dialog-shell">
           <button class="close-button" type="button" data-close-robot aria-label="关闭">×</button>
-          <div class="dialog-visual" aria-hidden="true">
-            <canvas id="robot-detail-canvas"></canvas>
+          <div class="dialog-visual">
+            <iframe
+              title="Unitree G1 detailed 3D model"
+              src="https://sketchfab.com/models/a817280996014cf29a7ec8631a15c012/embed?autostart=1&autospin=0.25&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0"
+              allow="autoplay; fullscreen; xr-spatial-tracking"
+              allowfullscreen
+            ></iframe>
           </div>
           <div class="dialog-copy">
             <p class="eyebrow">Unitree G1</p>

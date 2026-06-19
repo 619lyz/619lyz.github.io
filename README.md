@@ -12,6 +12,4 @@ python3 -m http.server 8000
 
 ## Assets
 
-The Unitree G1 URDF and STL meshes in `assets/unitree-g1/` are from
-[`unitreerobotics/unitree_ros`](https://github.com/unitreerobotics/unitree_ros).
-See `assets/unitree-g1/LICENSE-unitree_ros.txt`.
+The Unitree G1 project card embeds a public Sketchfab model by RandomRepresent.
