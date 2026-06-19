@@ -56,6 +56,19 @@
           <p class="eyebrow">Selected Work</p>
           <h2 id="work-title">项目</h2>
         </div>
+        <button class="robot-feature" type="button" data-open-robot>
+          <span class="robot-stage" aria-hidden="true">
+            <canvas id="robot-canvas"></canvas>
+          </span>
+          <span class="robot-copy">
+            <span class="project-tag">Humanoid Robot</span>
+            <strong>Unitree G1 Project</strong>
+            <span>
+              面向宇树 G1 的机器人项目入口：视觉感知、数据采集、控制实验和工具链会集中放在这里。
+            </span>
+            <span class="robot-link">Open Project</span>
+          </span>
+        </button>
         <div class="project-grid">
           <article class="project-card">
             <span class="project-tag">Robotics</span>
@@ -84,6 +97,32 @@
         </div>
       </section>
 
+      <dialog class="project-dialog" id="robot-dialog" aria-labelledby="robot-dialog-title">
+        <div class="dialog-shell">
+          <button class="close-button" type="button" data-close-robot aria-label="关闭">×</button>
+          <div class="dialog-visual" aria-hidden="true">
+            <canvas id="robot-detail-canvas"></canvas>
+          </div>
+          <div class="dialog-copy">
+            <p class="eyebrow">Unitree G1</p>
+            <h2 id="robot-dialog-title">宇树 G1 机器人项目</h2>
+            <p>
+              这里可以作为你关于 G1 的项目主页：后续可以放实验视频、代码仓库、传感器配置、
+              运动控制记录、视觉识别结果和数据集说明。
+            </p>
+            <div class="detail-list">
+              <span>视觉感知与三维坐标</span>
+              <span>机器人数据采集</span>
+              <span>控制与调试工具</span>
+            </div>
+            <div class="actions">
+              <a class="button primary" href="https://github.com/619lyz">GitHub Projects</a>
+              <a class="button" href="https://www.unitree.com/g1/">Unitree G1</a>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
       <section class="about-section" id="about" aria-labelledby="about-title">
         <div>
           <p class="eyebrow">About</p>
@@ -101,6 +140,6 @@
       <a href="https://github.com/619lyz">github.com/619lyz</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
