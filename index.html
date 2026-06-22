@@ -13,19 +13,38 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="回到首页">
-        <span class="brand-mark">619</span>
-        <span>LIU YIZHOU</span>
-      </a>
+      <a class="brand-mark" href="#top" aria-label="回到首页">619</a>
+      <a class="site-name" href="#top">LIU YIZHOU</a>
       <nav class="nav" aria-label="主导航">
-        <a class="active" href="#projects">Projects</a>
+        <a href="#about" data-nav-section="about">About</a>
+        <a href="#projects-list" data-nav-section="projects-list">Projects</a>
+        <a href="#journey" data-nav-section="journey">Journey</a>
+        <a href="#contact" data-nav-section="contact">Email</a>
         <a href="https://github.com/619lyz">GitHub ↗</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="projects" id="projects" aria-labelledby="projects-title">
-        <header class="projects-heading">
+        <article class="lab-intro" id="about">
+          <div class="lab-intro-copy">
+            <h2>Working side by side with robots.</h2>
+            <p>
+              我是刘一舟，关注具身智能、机器人视觉与移动操作。这里记录的不只是代码，
+              也包括我在真实机器人平台上的数据采集、系统调试和实验过程。
+            </p>
+          </div>
+          <figure class="lab-photo">
+            <img
+              src="assets/liu-yizhou-rokae-lab.jpg"
+              alt="刘一舟在实验室与 ROKAE 轮式双臂机器人合影"
+              width="1049"
+              height="1400"
+            />
+          </figure>
+        </article>
+
+        <header class="projects-heading" id="projects-list">
           <p class="eyebrow">Selected Work</p>
           <h1 id="projects-title">Projects</h1>
           <p>Robotics, embodied AI and perception.</p>
@@ -36,7 +55,6 @@
             <article class="project">
               <a class="project-visual" href="https://github.com/619lyz" aria-label="打开 G1 项目">
                 <span class="project-index">01</span>
-                <span class="project-state">IN PROGRESS</span>
                 <img
                   src="assets/unitree-g1.png"
                   alt="Unitree G1 人形机器人"
@@ -67,7 +85,6 @@
                 aria-label="打开 ROKAE 轮式双臂机器人项目"
               >
                 <span class="project-index">02</span>
-                <span class="project-state">OPEN DATASET</span>
                 <img
                   src="assets/rokae-wheeled-dual-arm.png"
                   alt="ROKAE 轮式双臂人形机器人示意图"
@@ -94,12 +111,48 @@
             </article>
           </li>
         </ol>
+
+        <section class="journey" id="journey" aria-labelledby="journey-title">
+          <header class="journey-heading">
+            <p class="eyebrow">My Journey</p>
+            <h2 id="journey-title">Education &amp; Research</h2>
+          </header>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <time datetime="2021-09/2025-06">2021.09 — 2025.06</time>
+              <div class="timeline-content">
+                <p class="timeline-place">中国石油大学（华东）</p>
+                <h3>智能感知工程 · 学士</h3>
+              </div>
+            </li>
+            <li class="timeline-item current">
+              <time datetime="2026-01">2026.01 — 至今</time>
+              <div class="timeline-content">
+                <p class="timeline-place">
+                  NTU · School of Electrical and Electronic Engineering
+                </p>
+                <h3>计算机控制与自动化</h3>
+              </div>
+            </li>
+            <li class="timeline-item current">
+              <time datetime="2026-02-27">2026.02.27 — 至今</time>
+              <div class="timeline-content">
+                <p class="timeline-place">MARS Lab</p>
+                <h3>成为 MARS Lab 的一员</h3>
+                <p>加入机器人与具身智能方向的研究工作。</p>
+              </div>
+            </li>
+          </ol>
+        </section>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <p>© <span id="year"></span> LIU YIZHOU</p>
-      <a href="https://github.com/619lyz">github.com/619lyz</a>
+      <div class="footer-links">
+        <a href="mailto:lyzliuyizhou@163.com">lyzliuyizhou@163.com</a>
+        <a href="https://github.com/619lyz">github.com/619lyz</a>
+      </div>
     </footer>
 
     <script type="module" src="script.js"></script>
