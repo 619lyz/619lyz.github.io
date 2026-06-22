@@ -18,134 +18,86 @@
         <span>LIU YIZHOU</span>
       </a>
       <nav class="nav" aria-label="主导航">
-        <a href="#work">项目</a>
-        <a href="#about">关于</a>
-        <a href="#contact">联系</a>
+        <a class="active" href="#projects">Projects</a>
+        <a href="https://github.com/619lyz">GitHub ↗</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">GitHub Pages</p>
-          <h1 id="hero-title">LIU YIZHOU</h1>
-          <p class="hero-text">
-            Hi, welcome. I build practical tools around robotics, vision, and developer workflows.
-          </p>
-          <div class="actions" aria-label="主要链接">
-            <a class="button primary" href="https://github.com/619lyz">GitHub</a>
-            <a class="button" href="#work">View Work</a>
-          </div>
-        </div>
-        <aside class="profile" aria-label="GitHub profile">
-          <img
-            src="https://avatars.githubusercontent.com/u/270879232?v=4"
-            alt="619lyz GitHub avatar"
-            width="240"
-            height="240"
-          />
-          <div>
-            <p class="profile-name">619lyz</p>
-            <p class="profile-meta">Robotics · Computer Vision · Tools</p>
-          </div>
-        </aside>
-      </section>
-
-      <section class="section" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <header class="projects-heading">
           <p class="eyebrow">Selected Work</p>
-          <h2 id="work-title">项目</h2>
-        </div>
-        <article class="robot-feature">
-          <span class="robot-stage">
-            <iframe
-              title="Unitree G1 3D model"
-              src="https://sketchfab.com/models/a817280996014cf29a7ec8631a15c012/embed?autostart=1&autospin=0.35&ui_controls=0&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0"
-              allow="autoplay; fullscreen; xr-spatial-tracking"
-              allowfullscreen
-            ></iframe>
-          </span>
-          <span class="robot-copy">
-            <span class="project-tag">Humanoid Robot</span>
-            <strong>Unitree G1 Project</strong>
-            <span>
-              面向宇树 G1 的机器人项目入口：视觉感知、数据采集、控制实验和工具链会集中放在这里。
-            </span>
-            <button class="robot-link" type="button" data-open-robot>Open Project</button>
-          </span>
-        </article>
-        <div class="project-grid">
-          <article class="project-card">
-            <span class="project-tag">Robotics</span>
-            <h3>ROKAE Wheeled Humanoid Robot Dataset</h3>
-            <p>面向轮式人形机器人实验和数据记录的公开数据集。</p>
-            <a href="https://github.com/619lyz/ROKAE-Wheeled-Humanoid-Robot-Dataset">Open Repo</a>
-          </article>
-          <article class="project-card">
-            <span class="project-tag">Vision</span>
-            <h3>Grounded SAM2 RealSense 3D Coordinates</h3>
-            <p>结合 Grounded SAM2 与 RealSense，输出连续 ID 和物体三维坐标。</p>
-            <a href="https://github.com/619lyz/grounded-sam2-realsense-3d-coordinates-linux">Linux Repo</a>
-          </article>
-          <article class="project-card">
-            <span class="project-tag">Camera</span>
-            <h3>Orbbec Color Tuner</h3>
-            <p>用于实时调节 Orbbec RGB 相机曝光、增益、白平衡和色彩参数的 GUI。</p>
-            <a href="https://github.com/619lyz/orbbec-color-tuner">Open Repo</a>
-          </article>
-          <article class="project-card">
-            <span class="project-tag">Utility</span>
-            <h3>Passbox WeChat Vault</h3>
-            <p>围绕本地数据管理和工作流的小工具项目。</p>
-            <a href="https://github.com/619lyz/passbox-wechat-vault">Open Repo</a>
-          </article>
-        </div>
-      </section>
+          <h1 id="projects-title">Projects</h1>
+          <p>Robotics, embodied AI and perception.</p>
+        </header>
 
-      <dialog class="project-dialog" id="robot-dialog" aria-labelledby="robot-dialog-title">
-        <div class="dialog-shell">
-          <button class="close-button" type="button" data-close-robot aria-label="关闭">×</button>
-          <div class="dialog-visual">
-            <iframe
-              title="Unitree G1 detailed 3D model"
-              src="https://sketchfab.com/models/a817280996014cf29a7ec8631a15c012/embed?autostart=1&autospin=0.25&ui_controls=1&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0"
-              allow="autoplay; fullscreen; xr-spatial-tracking"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="dialog-copy">
-            <p class="eyebrow">Unitree G1</p>
-            <h2 id="robot-dialog-title">宇树 G1 机器人项目</h2>
-            <p>
-              这里可以作为你关于 G1 的项目主页：后续可以放实验视频、代码仓库、传感器配置、
-              运动控制记录、视觉识别结果和数据集说明。
-            </p>
-            <div class="detail-list">
-              <span>视觉感知与三维坐标</span>
-              <span>机器人数据采集</span>
-              <span>控制与调试工具</span>
-            </div>
-            <div class="actions">
-              <a class="button primary" href="https://github.com/619lyz">GitHub Projects</a>
-              <a class="button" href="https://www.unitree.com/g1/">Unitree G1</a>
-            </div>
-          </div>
-        </div>
-      </dialog>
-
-      <section class="about-section" id="about" aria-labelledby="about-title">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">把想法做成可以运行的东西</h2>
-        </div>
-        <p>
-          这里会逐步收集我的机器人、视觉感知、相机调试和开发工具项目。页面保持轻量，
-          方便直接从 GitHub 跳到代码、数据集和实验记录。
-        </p>
+        <ol class="project-list">
+          <li>
+            <article class="project">
+              <a class="project-visual" href="https://github.com/619lyz" aria-label="打开 G1 项目">
+                <span class="project-index">01</span>
+                <span class="project-state">IN PROGRESS</span>
+                <img
+                  src="assets/unitree-g1.png"
+                  alt="Unitree G1 人形机器人"
+                  width="576"
+                  height="476"
+                />
+              </a>
+              <div class="project-info">
+                <div>
+                  <p class="project-type">Unitree G1 · Humanoid Robot</p>
+                  <h2>G1 Embodied AI</h2>
+                </div>
+                <p class="project-description">
+                  面向 Unitree G1 的具身智能项目，探索视觉感知、三维定位、机器人数据采集、
+                  策略学习与真机控制。
+                </p>
+                <a class="project-link" href="https://github.com/619lyz">
+                  View project <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="project project--rokae">
+              <a
+                class="project-visual"
+                href="https://github.com/619lyz/ROKAE-Wheeled-Humanoid-Robot-Dataset"
+                aria-label="打开 ROKAE 轮式双臂机器人项目"
+              >
+                <span class="project-index">02</span>
+                <span class="project-state">OPEN DATASET</span>
+                <img
+                  src="assets/rokae-wheeled-dual-arm.png"
+                  alt="ROKAE 轮式双臂人形机器人示意图"
+                  width="1448"
+                  height="1086"
+                />
+              </a>
+              <div class="project-info">
+                <div>
+                  <p class="project-type">ROKAE · Wheeled Dual-Arm Robot</p>
+                  <h2>ROKAE Mobile Manipulation</h2>
+                </div>
+                <p class="project-description">
+                  面向 ROKAE 轮式双臂机器人的数据采集与移动操作项目，记录机器人状态、
+                  双臂关节数据和任务过程，为感知、模仿学习与操作策略研究提供数据基础。
+                </p>
+                <a
+                  class="project-link"
+                  href="https://github.com/619lyz/ROKAE-Wheeled-Humanoid-Robot-Dataset"
+                >
+                  View project <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </li>
+        </ol>
       </section>
     </main>
 
-    <footer class="footer" id="contact">
+    <footer class="footer">
       <p>© <span id="year"></span> LIU YIZHOU</p>
       <a href="https://github.com/619lyz">github.com/619lyz</a>
     </footer>
