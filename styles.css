@@ -125,12 +125,8 @@ h1 {
 }
 
 .lab-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.72fr);
-  gap: clamp(48px, 9vw, 128px);
-  align-items: start;
   min-width: 0;
-  margin-bottom: clamp(120px, 15vw, 190px);
+  margin-bottom: clamp(80px, 10vw, 128px);
   border-top: 1px solid var(--line);
   padding-top: 32px;
 }
@@ -160,62 +156,6 @@ h1 {
   color: var(--muted);
   font-size: 1.04rem;
   line-height: 1.85;
-}
-
-.lab-photo {
-  position: relative;
-  width: min(100%, 470px);
-  margin: 0;
-  justify-self: end;
-  border-radius: 30px;
-  padding: 10px;
-  background: #fff;
-  box-shadow:
-    0 34px 70px rgba(20, 25, 32, 0.14),
-    0 10px 24px rgba(20, 25, 32, 0.08);
-  transform: rotate(1.8deg);
-  animation: photo-float 5.5s ease-in-out infinite;
-  transition:
-    box-shadow 300ms ease,
-    transform 300ms ease;
-}
-
-.lab-photo::before {
-  position: absolute;
-  z-index: -1;
-  inset: 12% -8% -7% 10%;
-  border-radius: 36px;
-  background: rgba(18, 104, 215, 0.08);
-  content: "";
-  filter: blur(2px);
-}
-
-.lab-photo:hover {
-  animation: none;
-  box-shadow:
-    0 42px 82px rgba(20, 25, 32, 0.17),
-    0 12px 28px rgba(20, 25, 32, 0.09);
-  transform: rotate(0deg) translateY(-8px);
-}
-
-.lab-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  border-radius: 22px;
-  object-fit: cover;
-}
-
-@keyframes photo-float {
-  0%,
-  100% {
-    transform: rotate(1.8deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(1deg) translateY(-12px);
-  }
 }
 
 .project-list {
@@ -410,8 +350,7 @@ h1 {
 
 .contact-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.55fr);
-  gap: clamp(42px, 8vw, 116px);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   min-width: 0;
   min-height: calc(100vh - 190px);
@@ -471,30 +410,6 @@ h1 {
   text-decoration: none;
 }
 
-.contact-photo {
-  position: relative;
-  width: min(100%, 380px);
-  margin: 0;
-  justify-self: end;
-  border-radius: 24px;
-  overflow: hidden;
-  background: var(--soft);
-}
-
-.contact-photo::before {
-  display: block;
-  padding-top: 122%;
-  content: "";
-}
-
-.contact-photo img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .footer {
   display: flex;
   align-items: center;
@@ -520,16 +435,9 @@ h1 {
 }
 
 @media (max-width: 860px) {
-  .lab-intro,
   .journey,
-  .project,
-  .contact-hero {
+  .project {
     grid-template-columns: 1fr;
-  }
-
-  .lab-photo {
-    width: min(100%, 560px);
-    justify-self: start;
   }
 
   .journey {
@@ -542,11 +450,6 @@ h1 {
 
   .project-info {
     max-width: 680px;
-  }
-
-  .contact-photo {
-    width: min(100%, 520px);
-    justify-self: start;
   }
 }
 
@@ -583,10 +486,6 @@ h1 {
     padding-top: 36px;
   }
 
-  .lab-intro {
-    gap: 42px;
-  }
-
   .lab-intro-copy {
     max-width: calc(100vw - 28px);
     padding-top: 28px;
@@ -606,16 +505,6 @@ h1 {
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 8px;
-  }
-
-  .lab-photo {
-    width: calc(100% - 12px);
-    border-radius: 22px;
-    transform: rotate(0.8deg);
-  }
-
-  .lab-photo img {
-    border-radius: 15px;
   }
 
   h1 {
@@ -663,11 +552,5 @@ h1 {
   .footer-links {
     flex-direction: column;
     justify-content: flex-start;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lab-photo {
-    animation: none;
   }
 }
