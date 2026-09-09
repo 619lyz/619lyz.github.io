@@ -198,6 +198,27 @@ h1 {
   width: min(76%, 560px);
 }
 
+.project-media {
+  min-width: 0;
+  margin: 0;
+}
+
+.project--iros .project-visual {
+  min-height: 0;
+  padding-top: 64px;
+}
+
+.project--iros .project-visual img {
+  width: 100%;
+}
+
+.project-media figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
 .project-visual:hover img {
   transform: translateY(-8px) scale(1.015);
 }
@@ -234,6 +255,11 @@ h1 {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.8;
+}
+
+.project--iros h2 {
+  line-height: 1.08;
+  letter-spacing: -0.04em;
 }
 
 .project-link {
