@@ -91,11 +91,28 @@ main,
 }
 
 .projects {
-  padding: clamp(36px, 5vw, 64px) 0 110px;
+  padding: 36px 0 110px;
 }
 
 .projects-heading {
-  margin-bottom: clamp(62px, 8vw, 100px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 8px 24px;
+  margin-bottom: 24px;
+  scroll-margin-top: 100px;
+}
+
+.projects-heading .eyebrow {
+  grid-column: 1 / -1;
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.projects-heading h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  letter-spacing: 0;
 }
 
 .eyebrow,
@@ -122,9 +139,9 @@ h1 {
 }
 
 .projects-heading > p:last-child {
-  margin: 32px 0 0;
+  margin: 0 0 6px;
   color: var(--muted);
-  font-size: 1.08rem;
+  font-size: 0.95rem;
 }
 
 .lab-intro {
@@ -133,16 +150,14 @@ h1 {
   gap: 64px;
   align-items: start;
   min-width: 0;
-  margin-bottom: clamp(80px, 10vw, 128px);
-  border-top: 1px solid var(--line);
-  padding-top: 32px;
+  margin-bottom: 48px;
 }
 
 .lab-intro-copy {
   width: 100%;
   min-width: 0;
   max-width: 640px;
-  padding-top: 36px;
+  padding-top: 8px;
 }
 
 .lab-intro-copy h2 {
@@ -172,10 +187,12 @@ h1 {
 }
 
 .news {
+  --news-preview-height: 340px;
   min-width: 0;
-  margin-top: 36px;
+  margin-top: 0;
   border-top: 2px solid #237260;
-  padding-top: 20px;
+  padding-top: 16px;
+  scroll-margin-top: 100px;
 }
 
 .news-heading {
@@ -184,7 +201,7 @@ h1 {
   align-items: baseline;
   justify-content: space-between;
   gap: 8px 16px;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -213,10 +230,117 @@ h1 {
   margin: 0;
   padding: 0;
   list-style: none;
-  max-height: 590px;
-  overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #c5d5cf transparent;
+  scrollbar-color: #9cb9ae #f0f4f2;
+}
+
+.news-feed {
+  position: relative;
+}
+
+.news.is-collapsible:not(.is-expanded) .news-list {
+  max-height: var(--news-preview-height);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.news-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.news-list::-webkit-scrollbar-track {
+  background: #f0f4f2;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: #9cb9ae;
+}
+
+.news.can-scroll-more .news-feed::after {
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  left: 0;
+  height: 36px;
+  background: linear-gradient(transparent, #fff);
+  pointer-events: none;
+  content: "";
+}
+
+.news-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 60px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.news-controls[hidden] {
+  display: none;
+}
+
+.news-scroll-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.news-position {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.news-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.news-scroll {
+  flex: 0 0 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.news-controls .news-toggle {
+  gap: 10px;
+  border-color: #d5e3dc;
+  border-radius: 4px;
+  background: #f1f6f3;
+  padding: 0 14px;
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.news-controls button:hover {
+  border-color: #237260;
+  background: #e8f1ec;
+}
+
+.news-controls button:focus-visible,
+.news-list:focus-visible {
+  outline: 2px solid #237260;
+  outline-offset: 3px;
+}
+
+.news.at-end .news-scroll img,
+.news.is-expanded .news-toggle img {
+  transform: rotate(180deg);
+}
+
+.news.is-expanded .news-scroll-control {
+  visibility: hidden;
 }
 
 .news-item {
@@ -340,11 +464,6 @@ h1 {
 
   .news {
     margin-top: 0;
-  }
-
-  .news-list {
-    max-height: none;
-    overflow: visible;
   }
 }
 
@@ -759,12 +878,33 @@ h1 {
   }
 
   .projects {
-    padding-top: 36px;
+    padding-top: 28px;
+  }
+
+  .projects-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .projects-heading h1 {
+    font-size: 2.25rem;
+  }
+
+  .projects-heading > p:last-child {
+    margin: 0;
+  }
+
+  .lab-intro {
+    margin-bottom: 32px;
+  }
+
+  .news {
+    --news-preview-height: 320px;
   }
 
   .lab-intro-copy {
     max-width: calc(100vw - 28px);
-    padding-top: 28px;
+    padding-top: 0;
   }
 
   .lab-intro-copy h2 {

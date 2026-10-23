@@ -8,7 +8,7 @@
       content="LIU YIZHOU 的个人 GitHub Pages：机器人、视觉感知和实用工具项目。"
     />
     <title>LIU YIZHOU | 619lyz</title>
-    <link rel="stylesheet" href="styles.css?v=20261023-iros-gallery" />
+    <link rel="stylesheet" href="styles.css?v=20261023-news-layout" />
   </head>
   <body>
     <header class="site-header">
@@ -42,60 +42,74 @@
               <h2 id="news-title">News</h2>
               <span>近期动态 <b class="news-count">03</b></span>
             </header>
-            <ol class="news-list">
-              <li class="news-item">
-                <div class="news-meta">
-                  <time datetime="2026-10-18">2026.10.18</time>
-                  <span>PREPRINT</span>
-                </div>
-                <h3>
-                  <a href="https://arxiv.org/abs/2610.26962">
-                    DexGraspFlow: Topology-Aware SE(3) Flow Matching for
-                    Cross-Embodiment Dexterous Grasp Generation
+            <div class="news-feed">
+              <ol class="news-list" id="news-list" aria-label="近期动态">
+                <li class="news-item">
+                  <div class="news-meta">
+                    <time datetime="2026-10-18">2026.10.18</time>
+                    <span>PREPRINT</span>
+                  </div>
+                  <h3>
+                    <a href="https://arxiv.org/abs/2610.26962">
+                      DexGraspFlow: Topology-Aware SE(3) Flow Matching for
+                      Cross-Embodiment Dexterous Grasp Generation
+                    </a>
+                  </h3>
+                  <p class="news-summary">我参与的论文已上线 arXiv，结合运动学拓扑与 SE(3) 流匹配，探索跨具身灵巧抓取生成。</p>
+                  <a class="news-link" href="https://arxiv.org/abs/2610.26962">
+                    Read on arXiv <span aria-hidden="true">↗</span>
                   </a>
-                </h3>
-                <p class="news-summary">我参与的论文已上线 arXiv，结合运动学拓扑与 SE(3) 流匹配，探索跨具身灵巧抓取生成。</p>
-                <a class="news-link" href="https://arxiv.org/abs/2610.26962">
-                  Read on arXiv <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-              <li class="news-item news-item--award">
-                <div class="news-meta">
-                  <div><time datetime="2026-09-27">2026.09.27</time>–<time datetime="2026-10-01">10.01</time></div>
-                  <span>AWARDS</span>
-                </div>
-                <h3>IROS 2026 · Pittsburgh</h3>
-                <p class="news-team">Legged Robot Challenges · Pioneer / NTU</p>
-                <ul class="news-awards" aria-label="获奖项目">
-                  <li><strong>1st Place</strong><span>冠军</span></li>
-                  <li><strong>Best Autonomy</strong><span>最佳自主性奖</span></li>
-                </ul>
-                <p class="news-summary">
-                  团队使用智身科技 M1 四足机器人开展 loco-manipulation，
-                  我负责松灵 PiPER-X 机械臂的调试工作。
-                </p>
-                <a class="news-link" href="https://www.prnewswire.com/news-releases/genisom-ai-showcases-embodied-intelligence-and-debuts-worlds-first-industry-grade-educational-quadruped-at-iros-2026-302896049.html">
-                  获奖报道 <span aria-hidden="true">↗</span>
-                </a>
-                <a class="news-link news-gallery-link" href="#iros-challenge">比赛照片与证书 <span aria-hidden="true">↓</span></a>
-              </li>
-              <li class="news-item">
-                <div class="news-meta">
-                  <time datetime="2026-09-25">2026.09.25</time>
-                  <span>PREPRINT</span>
-                </div>
-                <h3>
-                  <a href="https://arxiv.org/abs/2609.30833">
-                    Fast Plans, Faithful Actions: Closing the Planning-Execution Gap
-                    in Hierarchical Vision-Language-Action Models
+                </li>
+                <li class="news-item news-item--award">
+                  <div class="news-meta">
+                    <div><time datetime="2026-09-27">2026.09.27</time>–<time datetime="2026-10-01">10.01</time></div>
+                    <span>AWARDS</span>
+                  </div>
+                  <h3>IROS 2026 · Pittsburgh</h3>
+                  <p class="news-team">Legged Robot Challenges · Pioneer / NTU</p>
+                  <ul class="news-awards" aria-label="获奖项目">
+                    <li><strong>1st Place</strong><span>冠军</span></li>
+                    <li><strong>Best Autonomy</strong><span>最佳自主性奖</span></li>
+                  </ul>
+                  <p class="news-summary">
+                    团队使用智身科技 M1 四足机器人开展 loco-manipulation，
+                    我负责松灵 PiPER-X 机械臂的调试工作。
+                  </p>
+                  <a class="news-link" href="https://www.prnewswire.com/news-releases/genisom-ai-showcases-embodied-intelligence-and-debuts-worlds-first-industry-grade-educational-quadruped-at-iros-2026-302896049.html">
+                    获奖报道 <span aria-hidden="true">↗</span>
                   </a>
-                </h3>
-                <p class="news-summary">我参与的论文已上线 arXiv，探索层次化 VLA 模型中规划与执行的衔接。</p>
-                <a class="news-link" href="https://arxiv.org/abs/2609.30833">
-                  Read on arXiv <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-            </ol>
+                  <a class="news-link news-gallery-link" href="#iros-challenge">比赛照片与证书 <span aria-hidden="true">↓</span></a>
+                </li>
+                <li class="news-item">
+                  <div class="news-meta">
+                    <time datetime="2026-09-25">2026.09.25</time>
+                    <span>PREPRINT</span>
+                  </div>
+                  <h3>
+                    <a href="https://arxiv.org/abs/2609.30833">
+                      Fast Plans, Faithful Actions: Closing the Planning-Execution Gap
+                      in Hierarchical Vision-Language-Action Models
+                    </a>
+                  </h3>
+                  <p class="news-summary">我参与的论文已上线 arXiv，探索层次化 VLA 模型中规划与执行的衔接。</p>
+                  <a class="news-link" href="https://arxiv.org/abs/2609.30833">
+                    Read on arXiv <span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
+            <div class="news-controls" hidden>
+              <div class="news-scroll-control">
+                <button class="news-scroll" type="button" aria-label="继续浏览动态" aria-controls="news-list" title="继续浏览动态">
+                  <img src="assets/icons/arrow-down.svg" width="18" height="18" alt="" />
+                </button>
+                <span class="news-position" aria-hidden="true">01 / 03</span>
+              </div>
+              <button class="news-toggle" type="button" aria-expanded="false" aria-controls="news-list">
+                <span>展示全部</span>
+                <img src="assets/icons/chevrons-down.svg" width="16" height="16" alt="" />
+              </button>
+            </div>
           </aside>
         </article>
 
@@ -266,6 +280,6 @@
       </div>
     </footer>
 
-    <script type="module" src="script.js"></script>
+    <script defer src="script.js?v=20261023-news-layout"></script>
   </body>
 </html>

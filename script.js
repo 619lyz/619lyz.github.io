@@ -65,3 +65,79 @@ sectionLinks.forEach((link) => {
 });
 
 updateActiveSection();
+
+const news = document.querySelector(".news");
+
+if (news) {
+  const list = news.querySelector(".news-list");
+  const items = [...list.children];
+  const controls = news.querySelector(".news-controls");
+  const toggle = news.querySelector(".news-toggle");
+  const scrollButton = news.querySelector(".news-scroll");
+  const position = news.querySelector(".news-position");
+  const count = String(items.length).padStart(2, "0");
+  let expanded = false;
+
+  news.querySelector(".news-count").textContent = count;
+
+  const updateNews = () => {
+    const previewHeight = parseFloat(getComputedStyle(news).getPropertyValue("--news-preview-height"));
+    const collapsible = list.scrollHeight > previewHeight + 2;
+    if (!collapsible) {
+      expanded = false;
+    }
+
+    news.classList.toggle("is-collapsible", collapsible);
+    news.classList.toggle("is-expanded", expanded);
+    controls.hidden = !collapsible;
+    toggle.setAttribute("aria-expanded", String(expanded));
+    toggle.querySelector("span").textContent = expanded ? "收起动态" : "展示全部";
+
+    const scrollable = collapsible && !expanded;
+    const atEnd = list.scrollHeight - list.clientHeight - list.scrollTop < 2;
+    news.classList.toggle("can-scroll-more", scrollable && !atEnd);
+    news.classList.toggle("at-end", atEnd);
+    if (scrollable) {
+      list.setAttribute("tabindex", "0");
+    } else {
+      list.removeAttribute("tabindex");
+    }
+
+    const listTop = list.getBoundingClientRect().top;
+    const firstVisible = items.findIndex(item => item.getBoundingClientRect().bottom > listTop + 24);
+    const current = atEnd ? items.length : Math.max(1, firstVisible + 1);
+    position.textContent = `${String(current).padStart(2, "0")} / ${count}`;
+    const scrollLabel = atEnd ? "回到最新动态" : "继续浏览动态";
+    scrollButton.setAttribute("aria-label", scrollLabel);
+    scrollButton.title = scrollLabel;
+  };
+
+  toggle.addEventListener("click", () => {
+    expanded = !expanded;
+    updateNews();
+    if (!expanded) {
+      list.scrollTop = 0;
+      updateNews();
+      // Keep the collapse button in view when the expanded column becomes shorter.
+      const bounds = toggle.getBoundingClientRect();
+      if (bounds.top < 100 || bounds.bottom > window.innerHeight) {
+        toggle.scrollIntoView({ block: "center", behavior: "instant" });
+      }
+    }
+    updateActiveSection();
+  });
+
+  scrollButton.addEventListener("click", () => {
+    const atEnd = news.classList.contains("at-end");
+    list.scrollTo({
+      top: atEnd ? 0 : list.scrollTop + list.clientHeight * 0.8,
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  });
+
+  list.addEventListener("scroll", updateNews, { passive: true });
+  const newsObserver = new ResizeObserver(updateNews);
+  newsObserver.observe(list);
+  items.forEach(item => newsObserver.observe(item));
+  updateNews();
+}
